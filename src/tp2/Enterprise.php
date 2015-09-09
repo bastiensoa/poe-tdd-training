@@ -6,14 +6,22 @@ use tp2\Person;
 
 class Enterprise
 {
+    protected $enterprise = array();
+
     public function add(Person $person)
     {
-        // TO IMPLEMENT
+        $this->enterprise[] = $person;
     }
 
     public function remove(Person $personToRemove)
     {
-        // TO IMPLEMENT
+        foreach ($this->enterprise as $key => $value) {
+            if($personToRemove === $value)
+            {
+                unset($this->enterprise[$key]);
+                break;
+            }
+        }
     }
 
     /**
@@ -21,6 +29,6 @@ class Enterprise
      */
     public function employ(Person $person)
     {
-        // TO IMPLEMENT
+        return in_array($person, $this->enterprise);
     }
 }
