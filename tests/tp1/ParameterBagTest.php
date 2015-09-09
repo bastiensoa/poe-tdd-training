@@ -69,13 +69,9 @@ class ParameterBagTest extends \PHPUnit_Framework_TestCase
 
     public function testAdd()
     {
-     /*   $this->bag->add(array('test' => 'unitaire'));
-        $this->assertEquals(array('foo' => 'bar',
-                                  'baz' => 'zab',
-                                  'toto' => 'tata',
-                                  'int' => '1234',
-                                  'test' => 'unitaire'
-                                  ), 
-                            );*/
+        $this->bag->add(array('test' => 'unitaire'));
+        $this->bag->add(array('baz' => 'boz'));
+        $this->assertTrue($this->bag->has('test'));
+        $this->assertEquals('boz', $this->bag->get('baz'));
     }
 }
