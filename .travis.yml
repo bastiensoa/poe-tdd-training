@@ -6,12 +6,6 @@ php:
   - 5.5
 
 before_script:
-<<<<<<< Updated upstream
-  - composer require symfony/http-foundation:${SYMFONY_VERSION}
-=======
   - composer install --prefer-dist
-
-script: phpunit tests/tp2 --coverage-text
->>>>>>> Stashed changes
 
 script: phpunit tests/tp2 --coverage-text
