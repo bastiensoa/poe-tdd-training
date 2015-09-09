@@ -7,9 +7,11 @@ use tp2\Enterprise;
 
 class HRDepartment
 {
+    protected $entreprise;
+
     public function __construct(Enterprise $entreprise)
     {
-        // TO IMPLEMENT
+        $this->entreprise = $entreprise;
     }
 
     /**
@@ -17,7 +19,7 @@ class HRDepartment
      */
     public function hire(Person $person)
     {
-        // TO IMPLEMENT
+        $this->entreprise->add($person);
     }
 
     /**
@@ -25,7 +27,7 @@ class HRDepartment
      */
     public function fire(Person $person)
     {
-        // TO IMPLEMENT
+        $this->entreprise->remove($person);
     }
 
     /**
@@ -33,6 +35,6 @@ class HRDepartment
      */
     public function isEmployee(Person $person)
     {
-        // TO IMPLEMENT
+        $this->entreprise->employ($person);
     }
 }
